@@ -1,7 +1,9 @@
 package taskOne;
 
+import taskTwo.CalculationException;
+
 public class Calculator {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		//Task 1. Implement a simple calculator with 4 operations.
 		// Each operation - different method. Use it in the main method.
 		double a = 10d;
@@ -13,19 +15,25 @@ public class Calculator {
 		System.out.printf("%.2f / %.2f = %.2f%n", a, b, divide(a, b));
 	}
 
-	public static double add(double a, double b) {
+	public static double add(double a, double b) throws CalculationException {
 		return a + b;
 	}
 
-	public static double minus(double a, double b) {
-		return a - b;
+	public static double minus(double a, double b) throws CalculationException {
+		double result = a - b;
+		if (result < 0)
+			throw new CalculationException("Result of minus is negative, " +
+												   "but you always should stay positive");
+		return result;
 	}
 
-	public static double multiply(double a, double b) {
+	public static double multiply(double a, double b) throws CalculationException {
 		return a * b;
 	}
 
-	public static double divide(double a, double b) {
+	public static double divide(double a, double b) throws CalculationException {
+		if (b == 0)
+			throw new CalculationException("Dividing by zero is restricted");
 		return a / b;
 	}
 }
