@@ -1,4 +1,4 @@
-package taskTwo;
+package task_3;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,11 +16,11 @@ public class CollectionStringTask {
 	public static Map<Character, Integer> calculateNumberOfWordsByLetter(String text) {
 		List<String> words = List.of(text.trim().toLowerCase(Locale.ROOT).split(" "));
 		Map<Character, Integer> output = new HashMap<>();
-		for(String s : words){
+		for (String s : words) {
 			char firstLetter = s.charAt(0);
-			if (output.containsKey(firstLetter)){
+			if (output.containsKey(firstLetter)) {
 				output.put(s.charAt(0), output.get(firstLetter) + 1);
-			}else {
+			} else {
 				output.put(s.charAt(0), 1);
 			}
 		}

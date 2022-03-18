@@ -1,6 +1,6 @@
-package taskOne;
+package task_2;
 
-import taskTwo.CalculationException;
+import task_3.CalculationException;
 
 public class Calculator {
 	public static void main(String[] args) throws Exception {
