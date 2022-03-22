@@ -6,7 +6,6 @@ class JsonTask {
 	//Read some json from “input.json”
 	//and deserialize it to POJO.
 	//Then change a few fields and save it to “output.json”.
-	//The same for xml.
 
 	public static void main(String[] args) {
 		JsonUser user = new JsonUser("sur", "asd", 1000);
