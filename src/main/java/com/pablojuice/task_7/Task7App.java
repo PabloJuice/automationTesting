@@ -23,6 +23,8 @@ import javax.persistence.EntityManagerFactory;
 import java.util.Date;
 import java.util.Properties;
 
+import static com.pablojuice.shared.SpringDataUtils.*;
+
 @Configuration
 @ComponentScan(basePackages = "com.pablojuice.task_7.*")
 @EnableJpaRepositories(basePackages = "com.pablojuice.task_7.*")
@@ -77,37 +79,16 @@ public class Task7App {
 
 	@Bean(name = "entityManagerFactory")
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		vendorAdapter.setGenerateDdl(false);
-		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
-		factory.setJpaVendorAdapter(vendorAdapter);
-		factory.setPackagesToScan("task_7");
-		factory.setPersistenceUnitName("jpaData");
-		Properties properties = new Properties();
-		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
-		properties.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
-		properties.setProperty("hibernate.show_sql", "true");
-		properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
-		properties.setProperty("hibernate.hbm2ddl.auto", "create");//update
-		factory.setJpaProperties(properties);
-		factory.setDataSource(dataSource());
-		return factory;
+		return generateEntityManagerFactory("com.pablojuice.task_7");
 	}
 
 	@Bean(name = "dataSource")
 	public DriverManagerDataSource dataSource() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUsername("root");
-		dataSource.setPassword("root");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/automationTesting");
-		return dataSource;
+		return generateDataSource();
 	}
 
 	@Bean(name = "transactionManager")
 	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-		JpaTransactionManager transactionManager = new JpaTransactionManager();
-		transactionManager.setEntityManagerFactory(entityManagerFactory);
-		return transactionManager;
+		return generateTransactionManager(entityManagerFactory);
 	}
 }

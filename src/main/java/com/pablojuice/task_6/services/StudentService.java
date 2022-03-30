@@ -1,9 +1,9 @@
 package com.pablojuice.task_6.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.pablojuice.task_6.entities.Student;
 import com.pablojuice.task_6.repositories.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService {
