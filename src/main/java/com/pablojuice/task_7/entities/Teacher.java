@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "teachers")
 public class Teacher {
@@ -28,7 +27,7 @@ public class Teacher {
 	@Column(name = "teacherLastName")
 	private String lastName;
 
-	@OneToMany(mappedBy = "teacher", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "teacher")//, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	//@Column(name = "teacherSubjects")
 	private List<Subject> subjects = new ArrayList<>();
 

@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "subjects")
 public class Subject {
@@ -25,14 +24,14 @@ public class Subject {
 	@Column(name = "subjectTitle")
 	private String title;
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne//(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "courseTeacherId", referencedColumnName = "teacherId")
 	private Teacher teacher;
 
 	@OneToOne(mappedBy = "subject", orphanRemoval = true, cascade = CascadeType.ALL)
 	private SubjectMaterial material;
 
-	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	@ManyToMany//(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(
 			name = "studentSubjects",
 			joinColumns = @JoinColumn(name = "studentSubjectId", referencedColumnName = "subjectId"),
