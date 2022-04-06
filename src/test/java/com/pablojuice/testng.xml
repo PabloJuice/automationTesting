@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="task8" verbose="5" >
+	<parameter name="a" value="1"/>
+	<parameter name="b" value="2"/>
+
+	<test name="CalculatorTest" thread-count="4" parallel="classes">
+		<packages>
+			<package name="com.pablojuice.task_8.*" />
+		</packages>
+	</test>
+</suite>

@@ -49,5 +49,11 @@
 			<artifactId>spring-data-jpa</artifactId>
 			<version>2.6.3</version>
 		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.5</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>
