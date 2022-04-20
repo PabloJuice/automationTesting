@@ -13,10 +13,10 @@ public class CalculatorDivideTest {
 		Assert.assertEquals(Calculator.divide(9, 3), 3d);
 	}
 
-	@Test
-	@Parameters({"a", "b"})
-	public void calculatorMultiplyTest(int a, int b){
-		double expected = a * b;
-		Assert.assertEquals(Calculator.multiply(a, b), expected);
-	}
+//	@Test
+//	@Parameters({"a", "b"})
+//	public void calculatorMultiplyTest(int a, int b){
+//		double expected = a * b;
+//		Assert.assertEquals(Calculator.multiply(a, b), expected);
+//	}
 }
