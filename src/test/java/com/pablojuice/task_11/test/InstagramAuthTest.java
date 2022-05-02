@@ -7,12 +7,14 @@ import com.pablojuice.drivers.DriverManager;
 import com.pablojuice.task_11.elements.InstagramAuthTestBO;
 import com.pablojuice.task_13.listeners.CustomSuiteListener;
 import com.pablojuice.task_13.listeners.CustomTestListener;
+import com.pablojuice.task_14.AllureListener;
 import org.testng.annotations.*;
 
 @Listeners({
 		UniversalVideoListener.class,
 		CustomSuiteListener.class,
-		CustomTestListener.class
+		CustomTestListener.class,
+		AllureListener.class
 })
 public class InstagramAuthTest {
 
