@@ -1,0 +1,3 @@
+D:\software\apache-jmeter-5.4.3\bin // jmeter
+java -jar "D:\software\apache-jmeter-5.4.3\bin\ApacheJMeter.jar" -n -t .\performance\JMeterScenarios.jmx // run test
+java -jar "D:\software\apache-jmeter-5.4.3\bin\ApacheJMeter.jar" -g .\performance\summary.csv -o report // generate report
